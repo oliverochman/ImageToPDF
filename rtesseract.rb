@@ -55,4 +55,4 @@ class ImageToPDF
   end
 end
 
-test = ImageToPDF.new('./images/swe')
+# test = ImageToPDF.new('./images/swe')
