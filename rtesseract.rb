@@ -29,6 +29,8 @@ class ImageToPDF
         pdf_paths.push('./pdf/' + pdf_path)
       end
     end
+    
+    pdf_paths.sort_by { |x| -x[/\d+/].to_i }
 
     pdf = CombinePDF.new
     pdf_paths.each do |lonely_pdf|
@@ -39,7 +41,6 @@ class ImageToPDF
   end
 
   private
-
 
   def missing_image
     raise 'An image is required'
@@ -55,4 +56,4 @@ class ImageToPDF
   end
 end
 
-# test = ImageToPDF.new('./images/swe')
+test = ImageToPDF.new('./images/java')
